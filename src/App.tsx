@@ -25,10 +25,11 @@ function App() {
   
 
 useEffect(()=>{
+  console.log('dsa');
   setUsersFn()
 },[]);
 
- fds
+ 
 
   return (
     <div>
