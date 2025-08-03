@@ -29,8 +29,6 @@ useEffect(()=>{
 },[]);
 
 
-console.log(users)
-
 
   return (
     <div>
