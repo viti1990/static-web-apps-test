@@ -34,11 +34,9 @@ console.log(users)
 
   return (
     <div>
-      <>
-      {users?.map((user)=>{
+            {users?.map((user)=>{
         return <div key={`home ${user.id}`}>{user.name}</div>
       })}
-      </>
 <TestGeneral user={{id: 1, name: 'Javier', email: 'javier', age: 25, adminLevel: 1}} showAdminInfo={true}/>
    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
   <h1>Counter: {count}</h1>
