@@ -3,7 +3,8 @@ interface User {
   name: string;
   email: string;
 age: number,
-single?: boolean
+single?: boolean;
+test: {id: number}
 }
 
 interface Admin extends User {
