@@ -7,6 +7,7 @@ import { Theme } from './features/theme/Theme';
 import { changeTheme } from './slice/themeSlice';
 import { useEffect } from 'react';
 import { setUsers } from './slice/usersSlice';
+import AutoComplete from './Autocomplete';
  
 function App() {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -25,24 +26,39 @@ function App() {
   
 
 useEffect(()=>{
+  console.log('dsa');
   setUsersFn()
 },[]);
 
- fds
+   const items = [
+    'Argentina',
+    'Brasil',
+    'Chile',
+    'Colombia',
+    'Ecuador',
+    'Perú',
+    'Uruguay',
+    'Venezuela'
+  ];
+
+  const handleSelect = (selectedItem: string) => {
+    console.log('Seleccionaste:', selectedItem);
+  };
 
   return (
     <div>
             {users?.map((user)=>{
         return <div key={`home ${user.id}`}>{user.name}</div>
       })}
-<TestGeneral user={{id: 1, name: 'Javier', email: 'javier', age: 25, adminLevel: 1}} showAdminInfo={true}/>
+<TestGeneral user={{id: 1, name: 'Javier', email: 'javier', age: 25, adminLevel: 1, test: {id: 1}}} showAdminInfo={true}/>
    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
   <h1>Counter: {count}</h1>
    <button onClick={() => dispatch(decrement())}>-</button>
    <button onClick={() => dispatch(increment())}>+</button>
    <button onClick={() => dispatch(incrementByAmount(5))}>+5</button>
   </div>
-{theme}
+{theme} 
+<AutoComplete items={items} onSelect={handleSelect}/>
 
 <button onClick={()=>{
   dispatch(changeTheme('light'));
