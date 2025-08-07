@@ -34,7 +34,7 @@ const AutoComplete = ({ items, onSelect } : Props) => {
     onSelect(item);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!showDropdown) return;
 
     if (e.key === 'ArrowDown') {
